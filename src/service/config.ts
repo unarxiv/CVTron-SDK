@@ -1,12 +1,12 @@
 class Configure {
     private _BASE_URL:string
     private _PORT:string
-    constructor () {
-        this._BASE_URL = 'http://127.0.0.1'
-        this._PORT = '9090'
+    constructor (_base_url:string, _port:string) {
+        this._BASE_URL = _base_url
+        this._PORT = _port
     }
-    public getHostString() {
-
+    public getHostString():string {
+        return this.BASE_URL + ':' + this.PORT
     }
     get BASE_URL():string {
         return this._BASE_URL
@@ -14,4 +14,11 @@ class Configure {
     set BASE_URL(_base_url:string) {
         this._BASE_URL = _base_url
     }
+    get PORT():string {
+        return this._PORT
+    }
+    set PORT(_port:string) {
+        this._PORT = _port
+    }
 }
+export default Configure
