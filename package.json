@@ -1,0 +1,19 @@
+{
+  "name": "cvtron.js",
+  "version": "1.0.0",
+  "description": "The Client SDK for CVTron in JavaScript",
+  "main": "dist/cmjs/index.js",
+  "git": "https://github.com/unarxiv/cvtron.js.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:cmjs": "tsc -P tsconfig.json",
+    "build:es6": "tsc -P tsconfig.json --module ES6 --outDir dist/es6",
+    "build:web": "browserify dist/cmjs/index.js --standalone myLib -o dist/web/bundle.js",
+    "build": "npm run build:cmjs; npm run build:es6"
+  },
+  "author": "CVTron Developers",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
